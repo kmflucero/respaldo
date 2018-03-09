@@ -1,0 +1,25 @@
+<br>
+<div class="container">
+	<div class="row">
+		 <div class="col-sm">
+      
+    </div>
+     <div class="col-sm">
+ 
+    <%= image_tag @user.url, class:"card-img-top altura"%> 
+      <div class="card-body">
+	    <h5 class="card-title"><%= @user.email %></h5>
+	       <h5 class="card-title"><%= @user.gender %></h5>
+	    <h5 class="card-title"><%= @user.age %></h5>
+
+	     <div class="d-flex justify-content-between">
+	    	<a href="<%= interactions_path(like: true, user_two_id: @user.id)%>" data-method='post' >like</a>
+	    	<a href="<%= interactions_path(like: false, user_two_id: @user.id)%>" data-method='post' >dislike</a>
+	    </div>
+	  </div>
+    </div>
+    <div class="col-sm">
+    </div>
+	</div>
+	</div>
+</div>

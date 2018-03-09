@@ -1,0 +1,48 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Registro de productos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+       
+      </li>
+    </ul>
+    
+  </div>
+</nav>
+</header>
+
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <div class="row">
+<h2>Categories</h2>
+    <table class="table table-striped">
+  <thead class="thead-dark">
+    <tr>
+    
+      <th scope="col">Categoria</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |category| %>
+    <tr>
+      <td><strong><%= category.name %></strong></td>
+        <td><button type="button" class="btn btn-primary"><%= link_to 'Mostrar', category, class: "blanco" %></button></td>
+        <td><button type="button" class="btn btn-warning"><%= link_to 'Editar', edit_category_path(category), class: "blanco" %></button></td>
+        <td><button type="button" class="btn btn-danger"><%= link_to 'Eliminar', category, method: :delete, data: { confirm: 'Are you sure?' }, class: "blanco" %></button></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary"><%= link_to 'Nueva categoria', new_category_path, class:"blanco"%></button>
+
+  </div>
+</div>

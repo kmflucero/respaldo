@@ -1,0 +1,9 @@
+<h1>Ingrese un Perro</h1>
+
+<form action="<%= dogs_respuesta_path %>" method="post">
+ <input type="hidden" value="<%= form_authenticity_token %>" name="authenticity_token">
+ <input type="text" name="nuevo_perro">
+ <button type="submit" name="commit">enviar</button>
+ <p> El nombre del perro es <%= @perro.name %></p>
+
+</form>

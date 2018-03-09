@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ScaAnidado</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<% if logged? %>
+     <h5>Hola <%= current_user.name %>!</h5>
+     <%= link_to "Salir", session_path(current_user), method: :delete %>
+   <% else %>
+     <%= link_to 'Iniciar Sesión', users_sign_in_path %>
+     <%= link_to 'Registrarse', users_sign_up_path %>
+   <% end %>
+
+   <div class="container">
+     <p><%= notice %></p>
+     <p><%= alert %></p>
+     <%= yield %>
+   </div>
+  </body>
+</html>

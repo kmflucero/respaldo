@@ -1,0 +1,85 @@
+<h1>Listado de usuarios</h1>
+<p>Presiona el boton para crear un  nuevo usuario</p>
+
+
+<div class="alert alert-warning" role="alert"><%= notice %> </div>
+<a class="btn btn-primary" href="<%= pages_create_user_path%>" role="button">Crear usuario aleatorio</a>
+<a class="btn btn-primary" href="<%= pages_delete_user_path%>" role="button">Eliminar usuario aleatorio</a>
+
+<!--<form action="<%= pages_create_custom_user_path %>" method="GET">
+	<br>
+	<div class="row">
+    <div class="col">
+	<a class="btn btn-primary" href="<%= pages_create_custom_user_path%>" role="button" type='submit'>Crear</a>
+    </div>
+    <div class="col">
+  <input type="text" name="user_name" class="form-control" placeholder="Ingrese su nombre" aria-describedby="basic-addon1">
+    </div>
+    <div class="col">
+  <input type="text" name="user_edad" class="form-control" placeholder="Ingrese su edad" aria-describedby="basic-addon1">
+    </div>
+  </div>
+</div>
+
+</div>
+</form>  -->
+
+
+<div class="row">
+  <div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-secondary" type="button">Go!</button>
+      </span>
+      <input type="text" class="form-control" placeholder="Search for...">
+    </div>
+  </div>
+</div>
+
+<form action="<%= pages_create_custom_user_path %>" method="GET">
+ <input type="text" name="user_name">
+ <input type="text" name="user_age">
+ <input type="text" name="user_country">
+ <button type="submit" name="button">Crear</button>
+
+
+</form>
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th> Edad</th>
+      <th>País</th>
+    </tr>
+  </thead>
+  <tbody>
+	<% @users.each do |user| %>
+    <tr>
+      <th scope="row">1</th>
+      <td><%= user.name %></td>
+      <td><%= user.age %></td>
+      <td><%= user.country %></td>
+    </tr>
+
+	<%end%>
+  </tbody>
+</table>

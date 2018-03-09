@@ -1,0 +1,12 @@
+<h1>Registro de usuario</h1>
+
+<%= form_with(model: @user, url: sessions_path, local: true) do |form|%>
+
+	<%= form.label :email%>
+	<%= form.text_field :email%>
+
+	<%= form.label :password%>
+	<%= form.password_field :passowrd%>
+	<%= form.submit 'Enviar'%>
+<% end %>
+<imput type="password">

@@ -1,0 +1,36 @@
+<h1>Listado de Posts </h1>
+
+<table>
+   <tr>
+       <th>
+           Título
+       </th>
+       <th>
+           Comentarios
+       </th>
+
+       <th>
+           Fecha de creación:
+       </th>
+       
+       <th>
+           Comentado:
+       </th>
+   </tr>
+   <% @posts.each do |post| %>
+       <tr>
+           <td>
+               <%= post.title %>
+           </td>
+           <td>
+               <%= post.comments.count %>
+           </td>
+           <td>    
+               <%= time_ago_in_words(post.created_at) %>
+           </td>
+           <td>
+               <%= post.comments.present? ? time_ago_in_words(post.comments.last.created_at) : 'Never' %>
+           </td>
+       </tr>
+   <% end %>    
+</table>

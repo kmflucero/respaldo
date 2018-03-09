@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod: MyString
+  integer: MyString
+  detail: MyString
+  category: 1
+  value: 1
+  discount: MyString
+  integer: MyString
+  tax: 1
+  total: 1.5
+
+two:
+  cod: MyString
+  integer: MyString
+  detail: MyString
+  category: 1
+  value: 1
+  discount: MyString
+  integer: MyString
+  tax: 1
+  total: 1.5

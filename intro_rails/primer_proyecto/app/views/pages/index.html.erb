@@ -1,0 +1,12 @@
+<h1>HOLAA SOY LA VISTA DE INDEX!!!! DEL CONOTROLADOR PAGES</h1>
+<h3>HOLA <%= @nombre %> </h3>
+<p>Find me in app/views/pages/index.html.erb</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos asperiores, nostrum saepe, iste nisi quaerat reprehenderit deleniti aliquid ad corporis nobis. Corrupti quos in libero itaque omnis, quis odio atque. n app/views/pages/index.html.erb</p>
+
+<% @nombres.each_with_index do |nombre,i| %>
+<h4> El usuario <%= i + 1 %> se llama: <%= nombre %></h4> 
+<% end %>
+<h3> Link a otra página:</h3>
+<a href="#">ir a otra pagina</a>
+<hr>
+<%= link_to 'Link a otra pagina', pages_about_path %>

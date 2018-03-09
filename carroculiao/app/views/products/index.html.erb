@@ -1,0 +1,17 @@
+
+<%= link_to 'carro', orders_path %>
+<h2>Carrito de compra</h2><br><hr>
+<div class="row">
+  <% @products.each do |product| %>
+    <div class="col md-3 text-center">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag product.photo, class:'card-img-top' %>
+        <div class="card-body">
+          <h5 class="card-title">Nombre Producto: <%= product.name %></h5>
+          <p class="card-text">Precio: <%=  product.price %></p>
+         <a href="<%= product_orders_path(product) %>" data-method="post"><i class="fas fa-shopping-cart">x</i></a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div> 

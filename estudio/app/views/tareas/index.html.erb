@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <% @tareas.each do |tarea| %>
+    <div class="col md-3 text-center">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"> Nombre Tarea: <%= tarea.name %></h5>
+          <!-- <p class="card-text"><%#= work.content %></p> -->
+          <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-primary"><%= link_to 'Show', tarea %></button>
+        <button type="button" class="btn btn-primary"><%= link_to 'Edit', edit_tarea_path(tarea) %></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+

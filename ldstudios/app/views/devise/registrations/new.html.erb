@@ -1,0 +1,42 @@
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+    </div>
+    <div class="col-sm"> 
+      <div class="jumbotron jumb">
+          <h2> <%= render 'shared/marca' %></h2>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field">
+              <%= f.label :email, 'correo electronico' %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email",class:"form-control"  %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password, 'contraseña' %>
+              <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> caracteres minimos)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off",class:"form-control"  %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation, 'confirmar contraseña' %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off",class:"form-control"  %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Sign up", class:"btn btn-primary btn-block redondo" %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+    <div class="col-sm">
+    </div>
+  </div>
+</div>
